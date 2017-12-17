@@ -1,0 +1,8 @@
+{
+  "name": "ionic3ebook",
+  "app_id": "c6e44118",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
