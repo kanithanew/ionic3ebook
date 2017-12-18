@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+  <button ion-button menuToggle>
+  <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>คอร์สเรียนฟรี</ion-title>
+  </ion-navbar>
+  </ion-header>
+  <ion-content padding>
+  <ion-list>
+  <button ion-item *ngFor="let c of courses" (click)="itemSelected(c)">
+  <h3>{{ c.c_title }}</h3>
+  <p>{{ c.c_detail }}</p>
+  <ion-badge item-right color="danger">{{ c.c_view }}</ion-badge>
+  </button>
+  </ion-list>
+  </ion-content>

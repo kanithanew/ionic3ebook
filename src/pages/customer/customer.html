@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-toolbar>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>รายชื่อลูกค้า</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="openForm()">
+          <ion-icon name="person-add"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <form *ngIf="isToogle" novalidate #myForm="ngForm" (ngSubmit)="add(myForm.value)">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>ชื่อ-สกุล</ion-label>
+          <ion-input #fullname="ngModel" ngModel type="text" name="fullname" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>เบอร์โทรศัพท์</ion-label>
+          <ion-input #phone="ngModel" ngModel type="text" name="phone" required></ion-input>
+        </ion-item>
+        <div padding>
+          <button ion-button block type="submit" [disabled]="!myForm.form.valid">บันทึกข้อมูล</button>
+        </div>
+      </ion-list>
+      </form>
+      <ion-list>
+      <ion-item-sliding *ngFor="let item of customers">
+        <ion-item>
+          <h3>{{item.fullname}}</h3>
+          <p>{{item.phone}}</p>
+        </ion-item>
+        <ion-item-options side="right">
+          <button ion-button color="danger" (click)="delete(item)">
+            <ion-icon name="trash"></ion-icon>
+            ลบ
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+      </ion-list>
+  </ion-content>>

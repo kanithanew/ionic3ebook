@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ cDetail }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let c of items" (click)="getCourseDetail(c)">
+      <h3>{{ c.ch_title }}</h3>
+      <p>{{ c.ch_dateadd }}</p>
+      <button ion-button clear item-right>View</button>
+    </button>
+  </ion-list>
+</ion-content>

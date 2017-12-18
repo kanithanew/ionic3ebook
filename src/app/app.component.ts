@@ -2,10 +2,15 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {SQLite} from '@ionic-native/sqlite';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { CoursePage } from '../pages/course/course';
+import { NewsPage } from '../pages/news/news';
+import { CustomerPage } from '../pages/customer/customer';
 @Component({
   templateUrl: 'app.html'
 })
@@ -22,7 +27,14 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'List', component: ListPage },
+      { title: 'เกี่ยวกับเรา', component: AboutPage },
+      { title: 'ติดต่อ', component: ContactPage },
+      { title: 'CoursePage', component: CoursePage },
+      { title: 'ข่าวสาร', component: NewsPage },
+      { title: 'ลูกค้า', component: CustomerPage }
+      
+
     ];
 
   }
